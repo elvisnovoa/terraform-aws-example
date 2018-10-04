@@ -1,6 +1,11 @@
 # terraform-aws-example
 Terraform configs to create a simple VPC for a traditional Java web application using a Tomcat Server sitting behind an Apache Web Server.
 
+## Prerequisites
+
+- Terraform (https://www.terraform.io/)
+- An AWS account (https://aws.amazon.com) with two S3 buckets for remote state and programmatic access.
+
 **Note** 
 AWS may charge for some of these resources (ie NAT Gateways, Elastic IPs, multiple EC2 instances). 
 
