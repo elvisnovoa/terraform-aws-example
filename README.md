@@ -21,7 +21,7 @@ Add an index.html on your web server's /var/www/html directory so that the load 
 
 ### App Server
 
-The NAT Gateway is disabled by default to minimize cost, but you may enable it to see the internet from the private subnets. SSH into the app server instance and install Java and Tomcat. If you don't feel like paying, you may download these from the web instance in the public subnet and 
+The NAT Gateway is disabled by default to minimize cost, but you may enable it to see the internet from the private subnets. SSH into the app server instance and install Java and Tomcat. If you don't feel like paying, you may download these from the web instance in the public subnet and copy them over to the one in the private subnet.
 
 ```
 curl https://download.java.net/java/ga/jdk11/openjdk-11_linux-x64_bin.tar.gz > openjdk-11_linux-x64_bin.tar.gz
@@ -30,7 +30,7 @@ curl http://apache.mirrors.pair.com/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.
 tar -xzvf openjdk-11_linux-x64_bin.tar.gz
 unzip apache-tomcat-9.0.12.zip
 
-// tell apache where to find java 11
+// tell apache where to find java 11 since it's not yet available via yum install
 echo '
 #!/bin/bash
 JAVA_HOME=/home/ec2-user/jdk-11
